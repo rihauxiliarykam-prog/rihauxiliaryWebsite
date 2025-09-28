@@ -1,0 +1,38 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Backup files
+*.bak
+*.backup
+*_old.*
+
+# Old/unused files
+old-files/
+legacy-*.css
+*_old.css
+*_backup.css
+
+# Node modules (if any)
+node_modules/
+
+# Build artifacts (if any)
+dist/
+build/ 
