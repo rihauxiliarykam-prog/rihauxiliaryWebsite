@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://rih-auxiliary.com/sitemap.xml
+
+# Disallow crawling of assets (optional - helps with crawl budget)
+Disallow: /assets/css/
+Disallow: /assets/images/
+
+# Allow important assets
+Allow: /assets/images/RIH_emblem*
