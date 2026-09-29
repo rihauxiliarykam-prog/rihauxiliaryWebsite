@@ -12,6 +12,8 @@ A modern, premium-looking website built with plain HTML, CSS, and minimal vanill
 
 ## 🛠 How to Edit This Site (read me first)
 
+> Full maintainer's guide: **[UPDATING.md](UPDATING.md)** — common tasks, checks, and deployment.
+
 The root `*.html` files are **built files** — a banner comment at the top of each says so.
 The header, nav, footer and font/stylesheet links live in ONE place and are stamped onto
 every page by a small script. To make changes:

@@ -1,5 +1,17 @@
 /* RIH Afternoon Auxiliary — site styles
-   Palette is taken from the Auxiliary emblem: navy and warm orange on a warm paper ground. */
+   Palette from the Auxiliary emblem: navy and warm orange on a warm paper ground.
+
+   Map (search for the ===== headers):
+     Tokens          - all colors, fonts, spacing and radii; change values here first
+     Base            - resets and element defaults
+     Layout          - .container, .section, .grid, .split
+     Header          - floating pill nav (mobile behaviour in the 1080px media block)
+     Buttons         - .btn variants incl. .btn--hero with the arrow circle
+     Home hero       - full-viewport photo panel on index.html
+     Page sections   - one commented block per component, roughly in page order
+     Motion          - scroll-in animations; gated on html.js + prefers-reduced-motion
+     Responsive      - 1080px (nav), 960px and 720px (layout) media blocks
+   See UPDATING.md for the editing workflow. */
 
 /* ===== Tokens ===== */
 :root {
@@ -575,11 +587,22 @@ h2 + .lede { margin-top: 16px; }
 .footer__contact a:hover { color: var(--white); }
 
 .footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
   padding-block: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
   font-size: 0.8125rem;
   color: rgba(255, 255, 255, 0.5);
 }
+
+.footer__credit a {
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration-color: rgba(255, 255, 255, 0.3);
+}
+
+.footer__credit a:hover { color: rgba(255, 255, 255, 0.9); }
 
 /* ===== Cards ===== */
 .card {
