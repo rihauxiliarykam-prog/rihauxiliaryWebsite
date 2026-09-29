@@ -1317,6 +1317,11 @@ h2 + .lede { margin-top: 16px; }
   line-height: 1.5;
 }
 
+/* The figure on its own: one full-width, centred banner */
+.stat--solo { grid-template-columns: minmax(0, 1fr); }
+.stat--solo .stat__figure { justify-content: center; text-align: center; }
+.stat--solo .stat__figure p { max-width: 36em; }
+
 .stat__figure .amount {
   display: block;
   margin: 12px 0;
