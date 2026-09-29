@@ -10,11 +10,30 @@ A modern, premium-looking website built with plain HTML, CSS, and minimal vanill
 - **Lightweight**: Fast loading with optimized images and minimal JavaScript
 - **Easy to Customize**: Simple HTML structure and CSS classes
 
+## 🛠 How to Edit This Site (read me first)
+
+The root `*.html` files are **built files** — a banner comment at the top of each says so.
+The header, nav, footer and font/stylesheet links live in ONE place and are stamped onto
+every page by a small script. To make changes:
+
+1. **Page content** → edit `tools/pages/<page>.html`
+   (each file holds that page's `<head>` metadata between `<!-- page:head -->` markers,
+   followed by its `<main>` content).
+2. **Nav, footer, fonts** → edit the templates at the top of `tools/build.py`.
+3. **Rebuild** → `python3 tools/build.py` (or `python3 tools/build.py about` for one page).
+   Python 3 only, no dependencies, no install step.
+4. Commit both the source and the rebuilt root files. Hosting (Cloudflare) serves the
+   static files directly — there is no build step in deployment.
+
+Styling lives in `assets/css/site.css` (design tokens at the top, then one commented
+section per component). Behaviour lives in `assets/js/site.js` (mobile nav + scroll-in
+animations; no dependencies).
+
 ## 📁 File Structure
 
 ```
 Lauren/
-├── index.html              # Homepage
+├── index.html              # Homepage (BUILT - see tools/)
 ├── about.html              # About Us page
 ├── volunteer.html          # Volunteer opportunities
 ├── thrift.html            # Thrift shop information
@@ -23,25 +42,30 @@ Lauren/
 ├── contact.html           # Contact form and information
 ├── assets/
 │   ├── css/
-│   │   └── premium-styles.css  # Main stylesheet
+│   │   └── site.css            # Main stylesheet
+│   ├── js/
+│   │   └── site.js             # Mobile menu and header behaviour
 │   └── images/
 │       ├── RIH_emblem main.png # Logo
 │       ├── Updated Photos/     # High-quality images
 │       └── Thrift & Group photos # Additional images
+├── tools/
+│   ├── build.py            # Stamps shared header/footer onto every page
+│   └── pages/              # SOURCE for each page - edit these, then rebuild
 └── README.md
 ```
 
 ## 🎨 Design Features
 
 ### Color Palette
-- **Primary**: Professional blue (#2c5aa0)
-- **Accent**: Warm orange (#e67e22)
-- **Neutral**: Clean grays and whites
-- **Background**: Subtle variations for visual hierarchy
+Taken from the Auxiliary emblem:
+- **Primary**: Navy (#1d4c9a), deep navy (#13305f) for the call-to-action panels
+- **Accent**: Warm orange (#f39a3d), used sparingly for small details
+- **Neutral**: Ink (#0f1b33) for headings, warm paper (#faf8f4) and sand (#f3efe7) backgrounds
 
 ### Typography
-- **Headings**: Georgia serif font for elegance
-- **Body**: Inter sans-serif for readability
+- **Headings**: Newsreader serif (Google Fonts)
+- **Body**: The device's system font (San Francisco on Apple devices, Segoe UI on Windows)
 - **Hierarchy**: Clear size and weight variations
 
 ### Layout
@@ -61,13 +85,13 @@ The website automatically adapts to different screen sizes:
 ## 🛠️ Customization Guide
 
 ### Changing Colors
-Edit the CSS variables in `assets/css/premium-styles.css`:
+Edit the CSS variables at the top of `assets/css/site.css`:
 
 ```css
 :root {
-  --color-primary: #2c5aa0;        /* Main brand color */
-  --color-accent: #e67e22;         /* Accent color */
-  --color-bg-primary: #ffffff;     /* Background color */
+  --navy: #1d4c9a;      /* Main brand color */
+  --orange: #f39a3d;    /* Accent color */
+  --paper: #faf8f4;     /* Page background */
 }
 ```
 
