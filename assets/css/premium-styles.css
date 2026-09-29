@@ -1795,6 +1795,97 @@ a:hover {
   font-size: 1.0rem;
 }
 
+/* Recent Donations */
+.donation-year {
+  text-align: center;
+  font-size: 1.8rem;
+  margin: var(--spacing-xl) 0 var(--spacing-lg);
+}
+
+.section-header + .donation-year {
+  margin-top: 0;
+}
+
+.donation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-lg);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.donation-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-white);
+  border: 2px solid #5e35b1;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-medium);
+  overflow: hidden;
+}
+
+.donation-card:only-child {
+  grid-column: 1 / -1;
+  justify-self: center;
+  width: 100%;
+  max-width: 540px;
+}
+
+.donation-photos {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-xs);
+  height: 300px;
+  padding: var(--spacing-xs);
+  background-color: var(--color-bg-secondary);
+}
+
+.donation-photos img {
+  flex: 0 1 auto;
+  min-width: 0;
+  height: 100%;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+}
+
+.donation-body {
+  padding: var(--spacing-md) var(--spacing-lg) var(--spacing-lg);
+}
+
+.donation-dept {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: var(--spacing-xs);
+  opacity: 0.8;
+}
+
+.donation-body h4 {
+  font-size: 1.3rem;
+  margin-bottom: var(--spacing-sm);
+}
+
+.donation-body p:last-child {
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .donation-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .donation-photos {
+    height: 240px;
+  }
+
+  .donation-body {
+    padding: var(--spacing-md);
+  }
+}
+
 /* History List */
 .history-list {
   list-style: none;
