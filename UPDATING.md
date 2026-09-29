@@ -27,6 +27,9 @@ files as-is; there is no build step in deployment.
 | Mobile menu or scroll animations | `assets/js/site.js` |
 | Search-engine files | `sitemap.xml`, `robots.txt` (update `lastmod` when pages change) |
 
+After changing `site.css` or `site.js`, rebuild too: the build tags their links with `?v=<hash>`,
+which is what makes visitors' browsers fetch the new copy instead of a cached one.
+
 ## Common tasks
 
 ### Update text on a page

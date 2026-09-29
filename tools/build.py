@@ -19,6 +19,7 @@ Source file format (tools/pages/<name>.html):
     <!-- /page:head -->
     ... this page's <main> content (and any sections outside <main>) ...
 """
+import hashlib
 import re
 import sys
 from pathlib import Path
@@ -107,6 +108,18 @@ FOOTER = """\
   <script src="assets/js/site.js" defer></script>
 """
 
+# Shared files whose links get a ?v=<content hash> so browsers fetch the new
+# copy as soon as it changes instead of reusing a cached one for hours.
+VERSIONED = ["assets/css/site.css", "assets/js/site.js"]
+
+
+def versioned(html: str) -> str:
+    for rel in VERSIONED:
+        digest = hashlib.md5((ROOT / rel).read_bytes()).hexdigest()[:8]
+        html = html.replace(f'"{rel}"', f'"{rel}?v={digest}"')
+    return html
+
+
 HEAD_RE = re.compile(r"<!-- page:head -->\n(.*?)<!-- /page:head -->\n", re.S)
 
 
@@ -132,7 +145,7 @@ def build(page: str) -> None:
 {FOOTER}</body>
 </html>
 """
-    (ROOT / page).write_text(out)
+    (ROOT / page).write_text(versioned(out))
     print("built", page)
 
 
