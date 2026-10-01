@@ -1262,7 +1262,7 @@ h2 + .lede { margin-top: 16px; }
   gap: clamp(16px, 2.2vw, 28px);
 }
 
-.donation-card:only-child { grid-column: 1 / -1; max-width: calc(50% - 14px); }
+.donation-card:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: 100%; max-width: calc(50% - 14px); }
 
 .donation-photos {
   display: flex;
@@ -1596,7 +1596,7 @@ h2 + .lede { margin-top: 16px; }
   .accept,
   .donation-grid { grid-template-columns: minmax(0, 1fr); }
 
-  .donation-card:only-child { max-width: none; }
+  .donation-card:last-child:nth-child(odd) { max-width: none; }
   .donation-photos { height: 260px; }
   .merch { grid-template-columns: minmax(0, 1fr); }
   .merch__item--wide { grid-column: auto; }
