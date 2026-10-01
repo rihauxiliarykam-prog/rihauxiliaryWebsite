@@ -32,7 +32,7 @@ NAV = [
     ("index.html", "Home"),
     ("about.html", "About Us"),
     ("volunteer.html", "Volunteer"),
-    ("thrift.html", "Thrift Shop"),
+    ("thrift.html", "Thrift Seller"),
     ("gift-shop.html", "Gift Shop"),
     ("impact.html", "Our Impact"),
     ("contact.html", "Contact"),
@@ -86,13 +86,13 @@ FOOTER = """\
           <ul class="footer__links">
             <li><a href="about.html">About Us</a></li>
             <li><a href="volunteer.html">Volunteer</a></li>
-            <li><a href="thrift.html">Thrift Shop</a></li>
+            <li><a href="thrift.html">Thrift Seller</a></li>
             <li><a href="gift-shop.html">Gift Shop</a></li>
           </ul>
         </div>
         <div class="footer__contact">
           <h3>Contact Information</h3>
-          <p><strong>Thrift Shop:</strong> 146 Victoria Street<br>
+          <p><strong>Thrift Seller:</strong> 146 Victoria Street<br>
           <strong>Thrift Phone:</strong> <a href="tel:+12503740487">250-374-0487</a><br>
           <strong>Gift Shop:</strong> 311 Columbia Street<br>
           <strong>Gift Phone:</strong> <a href="tel:+12508525569">250-852-5569</a> extension 20774</p>
